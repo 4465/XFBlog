@@ -71,14 +71,14 @@ public class IndexShowController {
     }
 
 
-//查询底部栏博客信息
+    //查询底部栏博客信息
     @GetMapping("/footer/blogmessage")
     public String blogMessage(Model model){
         int blogTotal = blogService.getBlogTotal();
         model.addAttribute("blogTotal",blogTotal);
         int blogViewTotal = blogService.getBlogViewTotal();
         model.addAttribute("blogViewTotal",blogViewTotal);
-        int blogCommentTotal = blogService.getBlogCommentTotal();
+        int blogCommentTotal = blogService.getBlogCommentTotal() == null ? 0 : blogService.getBlogCommentTotal();
         model.addAttribute("blogCommentTotal",blogCommentTotal);
         int blogMessageTotal = blogService.getBlogMessageTotal();
         model.addAttribute("blogMessageTotal",blogMessageTotal);

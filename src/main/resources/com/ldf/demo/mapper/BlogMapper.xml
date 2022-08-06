@@ -162,7 +162,7 @@
 
     <!--查询访问总数-->
     <select id="getBlogViewTotal" resultType="Integer">
-        select sum(views) from xfblog.t_blog;
+        select coalesce(sum(views),0) from xfblog.t_blog;
     </select>
 
     <!--查询评论总数-->
