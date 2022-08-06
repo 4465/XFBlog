@@ -63,7 +63,7 @@ public class LoginController {
     @ApiOperation("注销")
     public String logout(HttpSession session){
         session.removeAttribute("user");
-        return "admin/login";
+        return "redirect:/";
     }
 
     @GetMapping("/toRegister")
