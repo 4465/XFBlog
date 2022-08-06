@@ -30,14 +30,40 @@
             <a href="#" th:href="@{/picture}" class="olive m-item item"><i class="image icon"></i>照片墙</a>
             <a href="#" th:href="@{/about}" class="m-item item"><i class="info icon"></i>关于我</a>
             <!--</div>-->
-            <div class="right m-item item">
+            <div class="right m-item m-mobile-hid item">
                 <form name="search" action="#" th:action="@{/search}" method="post" target="_blank">
                     <div class="ui icon transparent input m-margin-tb-tiny" style="color: white">
                         <input style="color: white" type="text" name="query" placeholder="Search...." th:value="${query}">
                         <i onclick="document.forms['search'].submit()" class="search link icon"></i>
                     </div>
                 </form>
+                <div class="ui dropdown item">
+
+                    <div class="text" th:if="${session.user == null}">
+                        <img class="ui avatar image" src="/static/images/avatar.png">
+                        <span>...</span>
+                    </div>
+
+                    <div class="text" th:unless="${session.user == null}">
+                        <img class="ui avatar image" src="/static/images/me.jpg">
+                        <span th:text="${session.user.nickname}">清の峰</span>
+                    </div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu" th:if="${session.user == null}">
+                        <a href="#" th:href="@{/admin}" class="item">登录</a>
+                        <a href="#" th:href="@{/toRegister}" class="item">注册</a>
+                    </div>
+
+                    <div class="menu" th:unless="${session.user == null}">
+                        <a href="#" th:href="@{/admin/logout}" class="item">注销</a>
+                    </div>
+
+                </div>
             </div>
+
+<!--            <div class="right m-item menu">-->
+
+<!--            </div>-->
         </div>
     </div>
     <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-hide" style="display: none">
@@ -351,6 +377,10 @@
 
     });
 
+    $('.ui.dropdown').dropdown({
+        on : 'hover'
+    });
+
     // 显示公众号
     $('.tencent').popup({
         popup : $('.tencent-qr'),
@@ -431,9 +461,6 @@
 <!--    });-->
 
 <!--</script>-->
-
-
-
 
 
 
