@@ -1582,3 +1582,52 @@ java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
 2022-08-08 11:30:05.005  INFO 11236 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
 2022-08-08 11:30:05.008  INFO 11236 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-08-08 11:30:05.023  INFO 11236 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-08 11:57:59.146  INFO 14452 --- [restartedMain] com.ldf.demo.DemoApplication             : Starting DemoApplication on DESKTOP-0580CQ1 with PID 14452 (E:\java_project\XFBlog\target\classes started by 15271 in E:\java_project\XFBlog)
+2022-08-08 11:57:59.150  INFO 14452 --- [restartedMain] com.ldf.demo.DemoApplication             : The following profiles are active: dev
+2022-08-08 11:57:59.267  INFO 14452 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-08 11:57:59.268  INFO 14452 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-08 11:58:02.331  INFO 14452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-08 11:58:02.345  INFO 14452 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-08 11:58:02.346  INFO 14452 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2022-08-08 11:58:02.551  INFO 14452 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-08 11:58:02.552  INFO 14452 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3284 ms
+2022-08-08 11:58:04.229  INFO 14452 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-08-08 11:58:04.498  INFO 14452 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-08-08 11:58:04.595  INFO 14452 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-08 11:58:04.650  INFO 14452 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-08-08 11:58:05.588  INFO 14452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-08 11:58:05.591  INFO 14452 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2022-08-08 11:58:05.616  INFO 14452 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2022-08-08 11:58:05.685  INFO 14452 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-08-08 11:58:06.156  INFO 14452 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: postUsingPOST_1
+2022-08-08 11:58:06.173  INFO 14452 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editInputUsingGET_1
+2022-08-08 11:58:06.185  INFO 14452 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editPostUsingPOST_1
+2022-08-08 11:58:06.189  INFO 14452 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: inputUsingGET_1
+2022-08-08 11:58:06.198  INFO 14452 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: postUsingPOST_2
+2022-08-08 11:58:06.226  INFO 14452 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: searchUsingPOST_1
+2022-08-08 11:58:06.233  INFO 14452 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_1
+2022-08-08 11:58:06.313  INFO 14452 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: postUsingPOST_3
+2022-08-08 11:58:06.333  INFO 14452 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editInputUsingGET_2
+2022-08-08 11:58:06.342  INFO 14452 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editPostUsingPOST_2
+2022-08-08 11:58:06.346  INFO 14452 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: inputUsingGET_2
+2022-08-08 11:58:06.354  INFO 14452 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: postUsingPOST_4
+2022-08-08 11:58:06.371  INFO 14452 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: registerUsingPOST_1
+2022-08-08 11:58:06.375  INFO 14452 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: toRegisterUsingGET_1
+2022-08-08 11:58:06.393  INFO 14452 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editInputUsingGET_3
+2022-08-08 11:58:06.408  INFO 14452 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editPostUsingPOST_3
+2022-08-08 11:58:06.411  INFO 14452 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: inputUsingGET_3
+2022-08-08 11:58:06.436  INFO 14452 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: postUsingPOST_5
+2022-08-08 11:58:06.485  INFO 14452 --- [restartedMain] com.ldf.demo.DemoApplication             : Started DemoApplication in 8.687 seconds (JVM running for 12.356)
+2022-08-08 11:58:15.741  INFO 14452 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-08 11:58:15.747  INFO 14452 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-08 11:58:15.786  INFO 14452 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 38 ms
+2022-08-08 11:58:15.896  INFO 14452 --- [http-nio-8080-exec-1] com.ldf.demo.aspect.LogAspect            : Request : RequestLog{url='0:0:0:0:0:0:0:1', ip='http://localhost:8080/', classMethod='com.ldf.demo.controller.IndexShowController.index', args=[1, {}]}
+2022-08-08 11:58:15.916  INFO 14452 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-08 11:58:16.176  INFO 14452 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-08 11:58:16.376  INFO 14452 --- [http-nio-8080-exec-1] com.ldf.demo.aspect.LogAspect            : Result : index
+2022-08-08 11:58:17.066  INFO 14452 --- [http-nio-8080-exec-3] com.ldf.demo.aspect.LogAspect            : Request : RequestLog{url='0:0:0:0:0:0:0:1', ip='http://localhost:8080/footer/blogmessage', classMethod='com.ldf.demo.controller.IndexShowController.blogMessage', args=[{}]}
+2022-08-08 11:58:17.091  INFO 14452 --- [http-nio-8080-exec-3] com.ldf.demo.aspect.LogAspect            : Result : index :: blogMessage
+2022-08-08 11:58:19.864  INFO 14452 --- [http-nio-8080-exec-2] com.ldf.demo.aspect.LogAspect            : Request : RequestLog{url='0:0:0:0:0:0:0:1', ip='http://localhost:8080/types/-1', classMethod='com.ldf.demo.controller.TypeShowController.listType', args=[1, -1, {}]}
+2022-08-08 11:58:19.906  INFO 14452 --- [http-nio-8080-exec-2] com.ldf.demo.aspect.LogAspect            : Result : types
+2022-08-08 11:58:20.184  INFO 14452 --- [http-nio-8080-exec-10] com.ldf.demo.aspect.LogAspect            : Request : RequestLog{url='0:0:0:0:0:0:0:1', ip='http://localhost:8080/footer/blogmessage', classMethod='com.ldf.demo.controller.IndexShowController.blogMessage', args=[{}]}
+2022-08-08 11:58:20.236  INFO 14452 --- [http-nio-8080-exec-10] com.ldf.demo.aspect.LogAspect            : Result : index :: blogMessage
