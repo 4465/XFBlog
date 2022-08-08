@@ -14,7 +14,6 @@
 </head>
 <body>
 
-
 <!--导航-->
 <nav id="nav" class="gird-header" style="display: none">
     <div class="ui container">
@@ -73,7 +72,6 @@
 
 <!--顶部图片-->
 <div class="m-bg-class_outer" style="width: 100%;height: 800px">
-    <img src="../static/images/bg.jpg" th:src="@{/images/bg.jpg}" alt="" class="ui m-bgIndex image" style="width: 100%;height: 100%">
     <div class="m-bg-class_coverIndex" align="center">
         <div class="m-margin-top-maxx" align="center">
             <img class="ui circular image" align="center" src="../static/images/me.jpg" th:src="@{/images/me.jpg}" style="width: 150px;height: 150px;">
@@ -102,7 +100,7 @@
             <div align="center">QQ</div>
         </div>
 
-        <div class="m-font-size-text" align="center">你若盛开，清峰自来，欢迎来到我的小栈！</div>
+        <div class="m-font-size-text" align="center">欢迎来到先锋的技术小站</div>
         <hr style="width: 30%">
 
         <h5 class="m-font-size-text-init-title m-margin-top-large">“足蹑平都古洞天，”</h5>
@@ -136,7 +134,6 @@
     <div class="ui stackable m-container-mini m-opacityImg grid">
         <div class="m-margin-tb-tiny four wide column" th:each="blog : ${recommendedBlogs}">
             <a href="#" class="class_outer" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
-                <img src="../static/images/backimg1.jpg" th:src="@{${blog.firstPicture}}"  alt="" class="ui rounded image" style="width: 350px;height: 250px">
                 <span class="class_cover" >
                      <h4 class="m-font-size-blog-text m-margin-tb-tiny" th:text="${blog.title}">大圣，此去欲何?</h4>
                   </span>
@@ -189,9 +186,7 @@
                         </div>
                         <!--博文图片-->
                         <div class="five wide column">
-                            <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
-                                <img src="../static/images/backimg1.jpg" th:src="@{${blog.firstPicture}}"  alt="" class="ui rounded image">
-                            </a>
+                            <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank"></a>
                         </div>
 
                     </div>

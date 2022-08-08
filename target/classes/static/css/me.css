@@ -1,5 +1,5 @@
 body{
-    background-image: url("../images/backimg1.jpg");
+    /*background-image: url("../images/backimg1.jpg");*/
     background-attachment:fixed;
     background-size: 100%;
     no-repeat: center top;
@@ -175,7 +175,7 @@ body{
 
 .m-font-size-text{
      font-size: 30px;
-     color: #ffffff;
+     color: #000000;
     /*font-family: STXihei;*/
 }
 
@@ -193,12 +193,12 @@ body{
 
 .m-font-size-text-mini{
     font-size: 16px;
-    color: #ffffff;
+    color: #000000;
 }
 
 .m-font-size-text-init-title{
     font-size: 24px;
-    color: #fffffc;
+    color: #000000;
     align-content: center;
     font-family:'STXingkai';
 }
