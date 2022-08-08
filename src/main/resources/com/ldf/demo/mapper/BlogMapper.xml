@@ -26,7 +26,7 @@
     <select id="listBlogs" resultMap="blog">
         select b.id,b.title,b.update_time,b.recommend,b.published,b.type_id,t.id,t.name from xfblog.t_blog b left outer join
         xfblog.t_type t on b.type_id = t.id order by b.create_time desc
-       </select>
+    </select>
 
 
     <select id="getBolgById" resultType="com.ldf.demo.queryVo.ShowBlog">

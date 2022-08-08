@@ -75,8 +75,10 @@ public class BlogController {
                        HttpSession session) {
 
         blog.setUser((User) session.getAttribute("user"));
-        blog.setType(typeService.getType(blog.getTypeId()));
-        blog.setTypeId(blog.getType().getId());
+        if(blog.getTypeId() != null){
+            blog.setType(typeService.getType(blog.getTypeId()));
+            blog.setTypeId(blog.getType().getId());
+        }
         blog.setUserId(blog.getUser().getId());
 
         blog.setFlag(blog.getFlag());
