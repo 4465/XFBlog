@@ -36,8 +36,12 @@ public class TypeShowController {
     public String listType(@RequestParam(value = "pageNum",defaultValue = "1")Integer pageNum,
                            @PathVariable Long id, Model model){
         List<Type> types = typeService.listTypesAndBlogs();
+        //返回结果给分类界面
         if (id==-1){
-            id=types.get(0).getId();
+            //查询结果集不为空
+            if(types.size() != 0) {
+                id=types.get(0).getId();
+            }
         }
         model.addAttribute("types",types);
         List<FirstPageBlog> blogs = blogService.getBlogsByTypeId(id);

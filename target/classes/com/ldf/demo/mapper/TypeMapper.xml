@@ -40,7 +40,7 @@
         </collection>
     </resultMap>
     <select id="listTypesAndBlogs" resultMap="type">
-        select t.id tid, t.name, b.id bid, b.title,b.type_id from xfblog.t_type t xfblog.t_blog b where t.id = b.type_id
+        select t.id tid, t.name, b.id bid, b.title,b.type_id from xfblog.t_type t, xfblog.t_blog b where t.id = b.type_id
     </select>
 </mapper>
 
