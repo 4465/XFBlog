@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User checkUsernameAndPassword(String username, String password) {
-        return userMapper.checkUsernameAndPassword(username, MD5Utils.code(password));
+        return userMapper.checkUsernameAndPassword(username, password);
     }
 
     @Override
