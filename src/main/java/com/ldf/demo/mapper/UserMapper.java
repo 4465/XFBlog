@@ -15,7 +15,7 @@ public interface UserMapper {
 
     User checkUsernameAndPassword(@Param("username") String username,@Param("password") String password);
 
-    User getUserByUsername(String username);
+    User getUserByName(String username);
 
     Boolean addUser(User user);
 

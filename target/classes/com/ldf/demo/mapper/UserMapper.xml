@@ -7,9 +7,9 @@
         where username=#{username} and password=#{password};
     </select>
 
-    <select id="getUserByUsername" resultType="com.ldf.demo.pojo.User">
-        select * from t_suer
-        where username = #{username}
+    <select id="getUserByName" resultType="com.ldf.demo.pojo.User">
+        select * from t_user
+        where username = #{username} or nickname = #{usernmame}
     </select>
 
     <insert id="addUser" parameterType="com.ldf.demo.pojo.User">

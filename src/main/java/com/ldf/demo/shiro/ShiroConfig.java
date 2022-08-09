@@ -10,6 +10,8 @@ import java.util.Map;
 
 @Configuration
 public class ShiroConfig {
+    //三大核心对象：Subject、SecurityManager、Realm
+
 
     //ShiroFilter过滤所有请求
     @Bean

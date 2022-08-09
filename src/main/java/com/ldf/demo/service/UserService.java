@@ -13,4 +13,11 @@ public interface UserService {
     User checkUsernameAndPassword(String username, String password);
 
     Boolean addUser(User user);
+
+    /**
+     * 可以通过username或者nickname查询用户
+     * @param name
+     * @return
+     */
+    User getUserByName(String name);
 }

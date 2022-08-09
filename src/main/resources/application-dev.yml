@@ -1,4 +1,10 @@
 spring:
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    encoding: UTF-8
+    suffix: .html
+    mode: HTML
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
@@ -23,3 +29,15 @@ mybatis:
 #配置端口
 server:
   port: 8080
+
+shiro:
+  retry: 5 # 重试次数
+  lock: 5 # 锁定次数
+  lock-duration: 1 # 锁定时长 min
+  disabled: false # A&A开关
+  session:
+    timeout: 1800000
+  loginurl: /admin
+  jwt:
+    maxAliveMinute: 1 # jwt token过期时间,单位minutes
+  maxIdleMinute: 120 # Jwt token最大存活时间，单位minutes

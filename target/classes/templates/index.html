@@ -38,22 +38,22 @@
                 </form>
                 <div class="ui dropdown item">
 
-                    <div class="text" th:if="${session.user == null}">
+                    <div class="text" th:if="${user == null}">
                         <img class="ui avatar image" src="/static/images/avatar.png">
                         <span>...</span>
                     </div>
 
-                    <div class="text" th:unless="${session.user == null}">
+                    <div class="text" th:unless="${user == null}">
                         <img class="ui avatar image" src="/static/images/me.jpg">
-                        <span th:text="${session.user.nickname}">清の峰</span>
+                        <span th:text="">清の峰</span>
                     </div>
                     <i class="dropdown icon"></i>
-                    <div class="menu" th:if="${session.user == null}">
+                    <div class="menu" th:if="${user == null}">
                         <a href="#" th:href="@{/admin}" class="item">登录</a>
                         <a href="#" th:href="@{/toRegister}" class="item">注册</a>
                     </div>
 
-                    <div class="menu" th:unless="${session.user == null}">
+                    <div class="menu" th:unless="${user == null}">
                         <a href="#" th:href="@{/admin/logout}" class="item">注销</a>
                     </div>
 

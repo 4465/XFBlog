@@ -16,6 +16,11 @@ public class UserRealm extends AuthorizingRealm {
     @Autowired
     public UserService userService;
 
+    @Override
+    public boolean supports(AuthenticationToken token) {
+        return token instanceof JwtToken;
+    }
+
     //授权
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
@@ -26,6 +31,7 @@ public class UserRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
 
+/**
         System.out.println("执行了Shiro的认证");
 
         UsernamePasswordToken token = (UsernamePasswordToken) authenticationToken;
@@ -43,7 +49,32 @@ public class UserRealm extends AuthorizingRealm {
         Session session = currentSubject.getSession();
 
         session.setAttribute("user", user);
+*/
 
-        return new SimpleAuthenticationInfo(user, user.getPassword(),"");
+        String jwtToken_str = (String) authenticationToken.getPrincipal();
+        //解密获得username,用于和数据库比对
+        String username = null;
+        try{
+            username = JwtUtils.getUserName(jwtToken_str);
+            System.out.println("JwtToken解析出的username:" + username);
+
+            User user = userService.getUserByName(username);
+
+            if(user == null){
+                System.out.println("用户不存在");
+                return null;
+            }
+            boolean verify = JwtUtils.verify(jwtToken_str, username, user.getPassword());
+            if(!verify){
+                System.out.println("Token校验不正确");
+                return null;
+            }
+            System.out.println("Shiro+JWT认证登录查询出的user" + user);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+        return new SimpleAuthenticationInfo(username, jwtToken_str,getName());
     }
 }

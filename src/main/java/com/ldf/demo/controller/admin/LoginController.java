@@ -2,6 +2,8 @@ package com.ldf.demo.controller.admin;
 
 import com.ldf.demo.pojo.User;
 import com.ldf.demo.service.UserService;
+import com.ldf.demo.shiro.JwtToken;
+import com.ldf.demo.shiro.JwtUtils;
 import com.ldf.demo.utils.MD5Utils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -13,6 +15,7 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
@@ -46,29 +49,36 @@ public class LoginController {
     //登录检验
     @PostMapping("/login")
     @ApiOperation(value = "登录")
-    public String login(@RequestParam String username,
-                        @RequestParam String password) {
+    public ModelAndView login(@RequestParam String username,
+                              @RequestParam String password) {
+        ModelAndView mv = new ModelAndView();
+
         System.out.println("前端获取的数据===同户名：" + username + "密码：" + password);
 
         //获取当前的用户
         Subject subject = SecurityUtils.getSubject();
 
-        //封装用户登录数据
-        UsernamePasswordToken token = new UsernamePasswordToken(username, MD5Utils.code(password));
+        //封装用户登录数据----UsernamePasswordToken
+        UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(username, MD5Utils.code(password));
 
-        System.out.println("token:" + token);
-        
+        //封装用户登录数据----JwtToken
+        JwtToken jwtToken = new JwtToken(JwtUtils.sign(username, MD5Utils.code(password)));
+
         //执行登录的方法，如果没有异常说明ok
         try{
-            subject.login(token);
+            subject.login(jwtToken);
+            mv.setViewName("index");
+            mv.addObject("user", jwtToken);
         }catch (UnknownAccountException e){
             System.out.println("用户名错误");
-            return "redirect:/admin";
+            mv.setViewName("admin/index");
         }catch (IncorrectCredentialsException e){
             System.out.println("密码错误");
-            return "redirect:/admin";
+            mv.setViewName("admin/index");
+        }catch (Exception e){
+            e.printStackTrace();
         }
-        return "redirect:/";
+        return mv;
     }
 
     //注销功能
