@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author: 清峰
  * @date: 2020/9/22 13:40
@@ -32,6 +35,12 @@ public class UserServiceImpl implements UserService {
         }else {
             return false;
         }
+    }
 
+    @Override
+    public List<User> listUser() {
+        List<User> userList = new ArrayList<>();
+        userList = userMapper.listUser();
+        return userList;
     }
 }

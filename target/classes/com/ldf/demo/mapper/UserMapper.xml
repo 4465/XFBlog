@@ -16,4 +16,8 @@
         insert into t_user(username, password) values(#{username}, #{password})
     </insert>
 
+    <select id="listUser" resultType="com.ldf.demo.pojo.User">
+        select * from t_user
+    </select>
+
 </mapper>

@@ -4,6 +4,8 @@ import com.ldf.demo.pojo.User;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * @author: 清峰
  * @date: 2020/9/22 13:46
@@ -18,5 +20,7 @@ public interface UserMapper {
     User getUserByUsername(String username);
 
     Boolean addUser(User user);
+
+    List<User> listUser();
 
 }
