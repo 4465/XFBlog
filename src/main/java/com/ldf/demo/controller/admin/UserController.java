@@ -11,14 +11,25 @@ import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -34,7 +45,7 @@ public class UserController {
 
     @GetMapping("/addUser")
     @ApiOperation("添加用户")
-    public String addUser(@RequestParam String username,
+    public String register(@RequestParam String username,
                           @RequestParam String password){
 
 //        System.out.println("输入的密码为：" + password);
@@ -44,8 +55,84 @@ public class UserController {
         user.setPassword(MD5Utils.code(password));
 //        System.out.println("用户信息" + user);
 
-        userService.addUser(user);
+        userService.register(user);
         return "";
+    }
+
+    @ApiOperation(value = "转向文件上传界面")
+    @GetMapping("/toImport")
+    public String toUpLoad(){
+        return "upload";
+    }
+
+    @ApiOperation(value = "导入用户信息")
+    @PostMapping(value = "/import")
+    public ModelAndView uploadUser(MultipartFile file) {
+        ModelAndView mv = new ModelAndView();
+
+        try {
+            //创建输入流
+            InputStream inputStream = file.getInputStream();
+            //获取文件名
+            String fileName = file.getOriginalFilename();
+            System.out.println("文件名：" + fileName);
+
+            //判断是什么版本
+            Workbook workbook = this.getWorkBook(fileName, inputStream);
+
+
+            if (workbook == null) {
+                mv.setViewName("uploadInfo");
+                mv.addObject("msg", "文件类型错误");
+            }
+
+            //获取文件中的表格
+            Sheet sheetAt = workbook.getSheetAt(0);
+            //获取文件中的长度，从0开始
+            int lastRowNum = sheetAt.getLastRowNum();
+
+            for (int i = 0; i < lastRowNum; i++) {
+                Row row = sheetAt.getRow(i + 1);
+
+                if(i+1 > lastRowNum){
+                    break;
+                }
+
+                row.getCell(1).setCellType(Cell.CELL_TYPE_STRING);
+                row.getCell(2).setCellType(Cell.CELL_TYPE_STRING);
+                row.getCell(3).setCellType(Cell.CELL_TYPE_STRING);
+                row.getCell(4).setCellType(Cell.CELL_TYPE_STRING);
+                row.getCell(5).setCellType(Cell.CELL_TYPE_STRING);
+                row.getCell(6).setCellType(Cell.CELL_TYPE_STRING);
+                row.getCell(7).setCellType(Cell.CELL_TYPE_STRING);
+                row.getCell(8).setCellType(Cell.CELL_TYPE_STRING);
+
+                User user = new User();
+
+                user.setNickname(row.getCell(1).getStringCellValue());
+                user.setUsername(row.getCell(2).getStringCellValue());
+                user.setPassword(MD5Utils.code(row.getCell(3).getStringCellValue()));
+                user.setEmail(row.getCell(4).getStringCellValue());
+                user.setAvatar(row.getCell(5).getStringCellValue());
+                if(!row.getCell(6).getStringCellValue().equals("")){
+                    user.setType(Integer.valueOf(row.getCell(6).getStringCellValue()));
+                }
+                if(!row.getCell(7).getStringCellValue().equals("")){
+                    user.setCreateTime(new Date(row.getCell(7).getStringCellValue()));
+                }
+                if(!row.getCell(8).getStringCellValue().equals("")){
+                    user.setUpdateTime(new Date(row.getCell(8).getStringCellValue()));
+                }
+                userService.addUser(user);
+                mv.addObject("msg", "上传成功");
+                mv.setViewName("uploadInfo");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            mv.addObject("msg", "内部错误");
+            mv.setViewName("uploadInfo");
+        }
+        return mv;
     }
 
     @GetMapping("/export")
@@ -61,7 +148,7 @@ public class UserController {
             HSSFSheet sheet = wb.createSheet("user");
 
             //标题栏数据
-            String[] titles = {"编号", "昵称", "用户名","密码","邮箱","头像","角色", "创建事件","更新时间"};
+            String[] titles = {"编号", "昵称", "用户名","密码","邮箱","头像","角色", "创建时间","更新时间"};
 
             //创建标题栏
             HSSFRow titleRow = sheet.createRow(0);
@@ -112,6 +199,16 @@ public class UserController {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public Workbook getWorkBook(String fileName, InputStream inputStream) throws IOException {
+        Workbook workbook = null;
+        if(fileName.endsWith(".xls")){
+            workbook = new HSSFWorkbook(inputStream);
+        }else if(fileName.endsWith("xlsx")){
+            workbook = new XSSFWorkbook(inputStream);
+        }
+        return workbook;
     }
 
 }

@@ -12,9 +12,15 @@
         where username = #{username}
     </select>
 
-    <insert id="addUser" parameterType="com.ldf.demo.pojo.User">
+    <insert id="register" parameterType="com.ldf.demo.pojo.User">
         insert into t_user(username, password) values(#{username}, #{password})
     </insert>
+
+    <insert id="addUser" parameterType="com.ldf.demo.pojo.User">
+        insert into t_user(nickname, username, password, email, avatar, type ,create_time, update_time)
+        values(#{nickname}, #{username}, #{password},#{email}, #{avatar}, #{type}, #{createTime}, #{updateTime})
+    </insert>
+
 
     <select id="listUser" resultType="com.ldf.demo.pojo.User">
         select * from t_user

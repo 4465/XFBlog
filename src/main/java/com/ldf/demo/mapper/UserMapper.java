@@ -19,6 +19,8 @@ public interface UserMapper {
 
     User getUserByUsername(String username);
 
+    Boolean register(User user);
+
     Boolean addUser(User user);
 
     List<User> listUser();

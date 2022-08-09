@@ -14,6 +14,8 @@ import java.util.List;
 public interface UserService {
     User checkUsernameAndPassword(String username, String password);
 
+    Boolean register(User user);
+
     Boolean addUser(User user);
 
     List<User> listUser();
