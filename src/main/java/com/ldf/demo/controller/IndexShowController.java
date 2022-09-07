@@ -58,13 +58,21 @@ public class IndexShowController {
     }
 
 
-//    跳转到博客详情页面
+    /**
+     * 跳转到博客内容页面
+     * @param id
+     * @param model
+     * @return
+     */
     @GetMapping("/blog/{id}")
     public String blog(@PathVariable Long id, Model model){
+
+        //获取博客的细节信息
         DetailedBlog blog = blogService.getDetailedBlogById(id);
 
+        //获取博客分评论信息
         List<Comment> comments = commentService.listCommentByBlogId(id);
-        System.out.println(comments);
+
         model.addAttribute("blog",blog);
         model.addAttribute("comments",comments);
         return "blog";

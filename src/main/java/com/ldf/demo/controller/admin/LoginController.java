@@ -18,7 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.servlet.http.HttpSession;
 
 /**
- * @author: 清峰
+ * @author: 刘威甫
  * @date: 2020/9/22 13:31
  * @code: 愿世间永无Bug!
  * @description: 管理员登录界面
