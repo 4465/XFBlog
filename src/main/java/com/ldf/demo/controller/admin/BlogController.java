@@ -10,6 +10,7 @@ import com.ldf.demo.queryVo.SearchBlog;
 import com.ldf.demo.queryVo.ShowBlog;
 import com.ldf.demo.service.BlogService;
 import com.ldf.demo.service.TypeService;
+import com.ldf.demo.utils.RedisUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,9 @@ public class BlogController {
 
     @Autowired
     private TypeService typeService;
+
+    @Autowired
+    private RedisUtils redisUtils;
 
     @RequestMapping("/blogs")
     @ApiOperation(value = "分页获取博客列表")
@@ -92,6 +96,10 @@ public class BlogController {
         if (b == 0) {
             attributes.addFlashAttribute("message", "新增失败");
         } else {
+            /*
+            博客总数自增
+             */
+            redisUtils.hincr("blogMessage", "blogTotal", 1);
             attributes.addFlashAttribute("message", "新增成功");
         }
         return "redirect:/admin/blogs";
