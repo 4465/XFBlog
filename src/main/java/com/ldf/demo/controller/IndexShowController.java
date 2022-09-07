@@ -7,14 +7,16 @@ import com.ldf.demo.queryVo.*;
 import com.ldf.demo.service.BlogService;
 import com.ldf.demo.service.CommentService;
 //import com.sun.org.apache.xpath.internal.operations.Mod;
+import com.ldf.demo.utils.RedisUtils;
+import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
-import java.net.SocketTimeoutException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author: 清峰
@@ -30,6 +32,9 @@ public class IndexShowController {
 
     @Autowired
     private CommentService commentService ;
+
+    @Autowired
+    private RedisUtils redisUtils;
 
 
     @GetMapping("/")
@@ -82,14 +87,44 @@ public class IndexShowController {
     //查询底部栏博客信息
     @GetMapping("/footer/blogmessage")
     public String blogMessage(Model model){
-        int blogTotal = blogService.getBlogTotal();
+
+        int blogTotal;
+        int blogViewTotal;
+        int blogCommentTotal;
+        int blogMessageTotal;
+
+        if(redisUtils.hasKey("blogMessage")){
+
+            Map<Object, Object> map = redisUtils.hmget("blogMessage");
+
+            System.out.println(map.toString());
+            blogTotal = (int) map.get("blogTotal");
+            blogViewTotal = (int) map.get("blogViewTotal");
+            blogCommentTotal = (int) map.get("blogCommentTotal");
+            blogMessageTotal = (int) map.get("blogMessageTotal");
+
+
+        }
+        else {
+            blogTotal = blogService.getBlogTotal();
+            blogViewTotal = blogService.getBlogViewTotal();
+            blogCommentTotal = blogService.getBlogCommentTotal() == null ? 0 : blogService.getBlogCommentTotal();
+            blogMessageTotal = blogService.getBlogMessageTotal();
+
+            Map<String, Object> blogMessage = new HashMap<>();
+            blogMessage.put("blogTotal", blogTotal);
+            blogMessage.put("blogViewTotal", blogViewTotal);
+            blogMessage.put("blogCommentTotal", blogCommentTotal);
+            blogMessage.put("blogMessageTotal", blogMessageTotal);
+
+            redisUtils.hmset("blogMessage", blogMessage);
+        }
+
         model.addAttribute("blogTotal",blogTotal);
-        int blogViewTotal = blogService.getBlogViewTotal();
         model.addAttribute("blogViewTotal",blogViewTotal);
-        int blogCommentTotal = blogService.getBlogCommentTotal() == null ? 0 : blogService.getBlogCommentTotal();
         model.addAttribute("blogCommentTotal",blogCommentTotal);
-        int blogMessageTotal = blogService.getBlogMessageTotal();
         model.addAttribute("blogMessageTotal",blogMessageTotal);
+
         return "index :: blogMessage";
     }
 

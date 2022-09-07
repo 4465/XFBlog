@@ -38,8 +38,11 @@ public class TypeController {
         PageHelper.startPage(pageNum, 10, orderBy);
         List<Type> types = typeService.listTypes();
 
+        System.out.println(types);
+
         if (types != null) {
             PageInfo<Type> pageInfo = new PageInfo<>(types);
+            System.out.println(pageInfo);
             model.addAttribute("pageInfo", pageInfo);
         }
         return "admin/types";

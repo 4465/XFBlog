@@ -30,6 +30,11 @@ import java.util.concurrent.ArrayBlockingQueue;
  * @code: 愿世间永无Bug!
  * @description: 后台博客管理控制器
  */
+
+
+/**
+ * 管理员界面
+ */
 @Controller
 @RequestMapping("/admin")
 @Api(value = "博客相关接口")
