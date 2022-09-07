@@ -65,6 +65,8 @@ public class IndexShowController {
 
     /**
      * 跳转到博客内容页面
+     * 访问量加1
+     *
      * @param id
      * @param model
      * @return
@@ -77,6 +79,9 @@ public class IndexShowController {
 
         //获取博客分评论信息
         List<Comment> comments = commentService.listCommentByBlogId(id);
+
+        //总访问量自增
+        redisUtils.hincr("blogMessage", "blogViewTotal", 1);
 
         model.addAttribute("blog",blog);
         model.addAttribute("comments",comments);
