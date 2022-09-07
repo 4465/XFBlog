@@ -579,3 +579,165 @@ com.ldf.demo.NotFountException: 该博客不存在
 2022-09-07 15:14:22.315  INFO 852 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
 2022-09-07 15:14:22.318  INFO 852 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-09-07 15:14:22.318  INFO 852 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-07 15:22:59.502  INFO 220 --- [restartedMain] com.ldf.demo.DemoApplication             : Starting DemoApplication on DESKTOP-J147UBI with PID 220 (E:\Java_Project\XFBlog\target\classes started by Liu in E:\Java_Project\XFBlog)
+2022-09-07 15:22:59.505  INFO 220 --- [restartedMain] com.ldf.demo.DemoApplication             : The following profiles are active: dev
+2022-09-07 15:22:59.640  INFO 220 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-07 15:22:59.645  INFO 220 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-09-07 15:23:01.062  INFO 220 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-09-07 15:23:01.062  INFO 220 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-09-07 15:23:01.112  INFO 220 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30ms. Found 0 Redis repository interfaces.
+2022-09-07 15:23:01.641  INFO 220 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.ldf.demo.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$1109ccde] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:23:01.840  INFO 220 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:23:01.856  INFO 220 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$26deae71] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:23:01.862  INFO 220 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidConfig' of type [com.ldf.demo.config.DruidConfig$$EnhancerBySpringCGLIB$$61b727c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:23:02.063  WARN 220 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'getShiroFilterFactoryBean' defined in class path resource [com/ldf/demo/shiro/ShiroConfig.class]: Unsatisfied dependency expressed through method 'getShiroFilterFactoryBean' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'getDefaultWebSecurityManager' defined in class path resource [com/ldf/demo/shiro/ShiroConfig.class]: Unsatisfied dependency expressed through method 'getDefaultWebSecurityManager' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userRealm': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [E:\Java_Project\XFBlog\target\classes\com\ldf\demo\mapper\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'druidDataSource': Could not bind properties to 'DataSource' : prefix=spring.datasource, ignoreInvalidFields=false, ignoreUnknownFields=true; nested exception is org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under 'spring.datasource' to javax.sql.DataSource
+2022-09-07 15:23:02.063  INFO 220 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-09-07 15:23:02.063 ERROR 220 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource' to javax.sql.DataSource:
+
+    Property: spring.datasource.filters
+    Value: stat,wall,log4j,config
+    Origin: class path resource [application-dev.yml]:25:14
+    Reason: org.apache.log4j.Priority
+
+Action:
+
+Update your application's configuration
+
+2022-09-07 15:25:56.183  INFO 11276 --- [restartedMain] com.ldf.demo.DemoApplication             : Starting DemoApplication on DESKTOP-J147UBI with PID 11276 (E:\Java_Project\XFBlog\target\classes started by Liu in E:\Java_Project\XFBlog)
+2022-09-07 15:25:56.186  INFO 11276 --- [restartedMain] com.ldf.demo.DemoApplication             : The following profiles are active: dev
+2022-09-07 15:25:56.332  INFO 11276 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-07 15:25:56.333  INFO 11276 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-09-07 15:25:57.759  INFO 11276 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-09-07 15:25:57.763  INFO 11276 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-09-07 15:25:57.804  INFO 11276 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26ms. Found 0 Redis repository interfaces.
+2022-09-07 15:25:58.326  INFO 11276 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.ldf.demo.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$79884c46] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:25:58.510  INFO 11276 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:25:58.526  INFO 11276 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$8f5d2dd9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:25:58.526  INFO 11276 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidConfig' of type [com.ldf.demo.config.DruidConfig$$EnhancerBySpringCGLIB$$6e99f1e4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:25:58.640  INFO 11276 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidDataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:25:58.735  INFO 11276 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:25:58.740  INFO 11276 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:25:58.780  INFO 11276 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:25:58.791  INFO 11276 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:25:59.495  INFO 11276 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:25:59.510  INFO 11276 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy88] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:25:59.510  INFO 11276 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userServiceImpl' of type [com.ldf.demo.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:25:59.510  INFO 11276 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.ldf.demo.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:25:59.877  INFO 11276 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:26:00.369  INFO 11276 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-07 15:26:00.381  INFO 11276 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-07 15:26:00.381  INFO 11276 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2022-09-07 15:26:00.520  INFO 11276 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-07 15:26:00.522  INFO 11276 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4188 ms
+2022-09-07 15:26:01.815  INFO 11276 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-09-07 15:26:02.029  INFO 11276 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-09-07 15:26:02.065  INFO 11276 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-07 15:26:02.109  INFO 11276 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-09-07 15:26:02.820  INFO 11276 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-07 15:26:02.823  INFO 11276 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2022-09-07 15:26:02.861  INFO 11276 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2022-09-07 15:26:02.907  INFO 11276 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-09-07 15:26:03.231  INFO 11276 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: postUsingPOST_1
+2022-09-07 15:26:03.237  INFO 11276 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editInputUsingGET_1
+2022-09-07 15:26:03.237  INFO 11276 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editPostUsingPOST_1
+2022-09-07 15:26:03.237  INFO 11276 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: inputUsingGET_1
+2022-09-07 15:26:03.237  INFO 11276 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: postUsingPOST_2
+2022-09-07 15:26:03.253  INFO 11276 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: searchUsingPOST_1
+2022-09-07 15:26:03.253  INFO 11276 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_1
+2022-09-07 15:26:03.284  INFO 11276 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: postUsingPOST_3
+2022-09-07 15:26:03.284  INFO 11276 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editInputUsingGET_2
+2022-09-07 15:26:03.300  INFO 11276 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editPostUsingPOST_2
+2022-09-07 15:26:03.300  INFO 11276 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: inputUsingGET_2
+2022-09-07 15:26:03.300  INFO 11276 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: postUsingPOST_4
+2022-09-07 15:26:03.300  INFO 11276 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: registerUsingPOST_1
+2022-09-07 15:26:03.300  INFO 11276 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: toRegisterUsingGET_1
+2022-09-07 15:26:03.315  INFO 11276 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editInputUsingGET_3
+2022-09-07 15:26:03.315  INFO 11276 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editPostUsingPOST_3
+2022-09-07 15:26:03.315  INFO 11276 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: inputUsingGET_3
+2022-09-07 15:26:03.315  INFO 11276 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: postUsingPOST_5
+2022-09-07 15:26:03.353  INFO 11276 --- [restartedMain] com.ldf.demo.DemoApplication             : Started DemoApplication in 8.282 seconds (JVM running for 9.218)
+2022-09-07 15:27:09.348  INFO 11276 --- [http-nio-8080-exec-7] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-07 15:27:09.349  INFO 11276 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-09-07 15:27:09.371  INFO 11276 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed initialization in 22 ms
+2022-09-07 15:27:09.417  INFO 11276 --- [http-nio-8080-exec-7] com.ldf.demo.aspect.LogAspect            : Request : RequestLog{url='0:0:0:0:0:0:0:1', ip='http://localhost:8080/blog/9', classMethod='com.ldf.demo.controller.IndexShowController.blog', args=[9, {}]}
+2022-09-07 15:27:09.761  INFO 11276 --- [http-nio-8080-exec-7] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-09-07 15:27:10.300  INFO 11276 --- [http-nio-8080-exec-7] com.ldf.demo.aspect.LogAspect            : Result : blog
+2022-09-07 15:27:32.240  INFO 11276 --- [http-nio-8080-exec-7] com.ldf.demo.aspect.LogAspect            : Request : RequestLog{url='0:0:0:0:0:0:0:1', ip='http://localhost:8080/footer/blogmessage', classMethod='com.ldf.demo.controller.IndexShowController.blogMessage', args=[{}]}
+2022-09-07 15:27:32.258  INFO 11276 --- [http-nio-8080-exec-7] com.ldf.demo.aspect.LogAspect            : Result : index :: blogMessage
+2022-09-07 15:27:32.337  INFO 11276 --- [http-nio-8080-exec-4] com.ldf.demo.aspect.LogAspect            : Request : RequestLog{url='0:0:0:0:0:0:0:1', ip='http://localhost:8080/comments/9', classMethod='com.ldf.demo.controller.CommentShowController.comments', args=[9, {}]}
+2022-09-07 15:27:32.345  INFO 11276 --- [http-nio-8080-exec-4] com.ldf.demo.aspect.LogAspect            : Result : blog :: commentList
+2022-09-07 15:29:19.576  INFO 11276 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-09-07 15:29:19.576  INFO 11276 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-09-07 15:29:19.623  INFO 11276 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-09-07 15:29:30.116  INFO 6728 --- [restartedMain] com.ldf.demo.DemoApplication             : Starting DemoApplication on DESKTOP-J147UBI with PID 6728 (E:\Java_Project\XFBlog\target\classes started by Liu in E:\Java_Project\XFBlog)
+2022-09-07 15:29:30.116  INFO 6728 --- [restartedMain] com.ldf.demo.DemoApplication             : The following profiles are active: dev
+2022-09-07 15:29:30.225  INFO 6728 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-07 15:29:30.225  INFO 6728 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-09-07 15:29:31.797  INFO 6728 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-09-07 15:29:31.802  INFO 6728 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-09-07 15:29:31.851  INFO 6728 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29ms. Found 0 Redis repository interfaces.
+2022-09-07 15:29:32.515  INFO 6728 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.ldf.demo.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$e8a13b97] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:29:32.802  INFO 6728 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:29:32.824  INFO 6728 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$fe761d2a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:29:32.842  INFO 6728 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidConfig' of type [com.ldf.demo.config.DruidConfig$$EnhancerBySpringCGLIB$$ddb2e135] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:29:32.926  INFO 6728 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidDataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:29:33.051  INFO 6728 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:29:33.064  INFO 6728 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:29:33.098  INFO 6728 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:29:33.161  INFO 6728 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:29:33.292  INFO 6728 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:29:33.292  INFO 6728 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy88] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:29:33.308  INFO 6728 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userServiceImpl' of type [com.ldf.demo.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:29:33.308  INFO 6728 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.ldf.demo.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:29:33.773  INFO 6728 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-07 15:29:34.358  INFO 6728 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-07 15:29:34.379  INFO 6728 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-07 15:29:34.379  INFO 6728 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2022-09-07 15:29:34.532  INFO 6728 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-07 15:29:34.532  INFO 6728 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4307 ms
+2022-09-07 15:29:35.633  INFO 6728 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-09-07 15:29:35.897  INFO 6728 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-09-07 15:29:35.934  INFO 6728 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-07 15:29:35.992  INFO 6728 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-09-07 15:29:36.741  INFO 6728 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-07 15:29:36.742  INFO 6728 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2022-09-07 15:29:36.786  INFO 6728 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2022-09-07 15:29:36.854  INFO 6728 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-09-07 15:29:37.386  INFO 6728 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: postUsingPOST_1
+2022-09-07 15:29:37.391  INFO 6728 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editInputUsingGET_1
+2022-09-07 15:29:37.398  INFO 6728 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editPostUsingPOST_1
+2022-09-07 15:29:37.399  INFO 6728 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: inputUsingGET_1
+2022-09-07 15:29:37.447  INFO 6728 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: postUsingPOST_2
+2022-09-07 15:29:37.469  INFO 6728 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: searchUsingPOST_1
+2022-09-07 15:29:37.472  INFO 6728 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_1
+2022-09-07 15:29:37.546  INFO 6728 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: postUsingPOST_3
+2022-09-07 15:29:37.559  INFO 6728 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editInputUsingGET_2
+2022-09-07 15:29:37.567  INFO 6728 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editPostUsingPOST_2
+2022-09-07 15:29:37.569  INFO 6728 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: inputUsingGET_2
+2022-09-07 15:29:37.608  INFO 6728 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: postUsingPOST_4
+2022-09-07 15:29:37.630  INFO 6728 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: registerUsingPOST_1
+2022-09-07 15:29:37.632  INFO 6728 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: toRegisterUsingGET_1
+2022-09-07 15:29:37.637  INFO 6728 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editInputUsingGET_3
+2022-09-07 15:29:37.640  INFO 6728 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editPostUsingPOST_3
+2022-09-07 15:29:37.641  INFO 6728 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: inputUsingGET_3
+2022-09-07 15:29:37.648  INFO 6728 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: postUsingPOST_5
+2022-09-07 15:29:37.708  INFO 6728 --- [restartedMain] com.ldf.demo.DemoApplication             : Started DemoApplication in 8.477 seconds (JVM running for 10.073)
+2022-09-07 15:29:44.626  INFO 6728 --- [http-nio-8080-exec-10] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-07 15:29:44.626  INFO 6728 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-09-07 15:29:44.651  INFO 6728 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed initialization in 25 ms
+2022-09-07 15:29:44.689  INFO 6728 --- [http-nio-8080-exec-10] com.ldf.demo.aspect.LogAspect            : Request : RequestLog{url='0:0:0:0:0:0:0:1', ip='http://localhost:8080/blog/9', classMethod='com.ldf.demo.controller.IndexShowController.blog', args=[9, {}]}
+2022-09-07 15:29:45.252  INFO 6728 --- [http-nio-8080-exec-10] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-09-07 15:29:45.489  INFO 6728 --- [http-nio-8080-exec-10] com.ldf.demo.aspect.LogAspect            : Result : blog
+2022-09-07 15:30:07.282  INFO 6728 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-09-07 15:30:07.284  INFO 6728 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-09-07 15:30:07.296  INFO 6728 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
