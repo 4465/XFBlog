@@ -41,6 +41,7 @@ logging:
   file: 
     name: log/blog-dev.log
 
+
 #起别名，mapper路径，驼峰命名规则
 mybatis:
   type-aliases-package: com.ldf.demo.pojo
@@ -49,6 +50,10 @@ mybatis:
     map-underscore-to-camel-case: true
 
 
+
+
 #配置端口
 server:
   port: 8080
+
+#mp日志输出到控制台

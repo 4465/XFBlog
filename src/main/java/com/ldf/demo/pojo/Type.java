@@ -1,6 +1,9 @@
 package com.ldf.demo.pojo;
 
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,11 +13,13 @@ import java.util.List;
  * @code: 愿世间永无Bug!
  * @description: 分类实体类
  */
+@TableName("t_type")
 public class Type {
-
+    @TableField("id")
     private Long id;
+    @TableField("name")
     private String name;
-
+    @TableField(exist = false)
     private List<Blog> blogs = new ArrayList<>();
 
     @Override

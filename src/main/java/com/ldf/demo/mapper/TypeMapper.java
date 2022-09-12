@@ -1,6 +1,9 @@
 package com.ldf.demo.mapper;
 
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.ldf.demo.pojo.Type;
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,7 +15,8 @@ import java.util.List;
  * @description:
  */
 @Repository
-public interface TypeMapper {
+@Mapper
+public interface TypeMapper extends BaseMapper<Type> {
 
     List<Type> listTypes();
 
