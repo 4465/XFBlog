@@ -1,13 +1,16 @@
 package com.ldf.demo;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ldf.demo.mapper.TypeMapper;
+import com.ldf.demo.pojo.Type;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @SpringBootTest
 class DemoApplicationTests {
@@ -29,6 +32,14 @@ class DemoApplicationTests {
         System.out.println(page.getSize());
         System.out.println(page.getRecords());
 
+    }
+
+    @Test
+    public void testGetByWrapper(){
+        QueryWrapper<Type> qu = new QueryWrapper<Type>();
+        qu.select("name");
+        List<Type> list = typeMapper.selectList(qu);
+        System.out.println(list);
     }
 
 

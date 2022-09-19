@@ -47,6 +47,7 @@ public class TypeShowController {
         List<FirstPageBlog> blogs = blogService.getBlogsByTypeId(id);
         PageHelper.startPage(pageNum,1000);
         PageInfo<FirstPageBlog> pageInfo = new PageInfo<>(blogs);
+        pageInfo.getList();
         model.addAttribute("pageInfo",pageInfo);
         model.addAttribute("activeTypeId",id);//增添样式 id传回去，当前分类颜色会变深
         return "types";
