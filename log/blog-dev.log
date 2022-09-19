@@ -799,3 +799,56 @@
 2022-09-19 16:42:54.186  INFO 8452 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
 2022-09-19 16:42:54.186  INFO 8452 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
 2022-09-19 16:42:54.217  INFO 8452 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-09-19 17:21:30.336  INFO 15120 --- [main] c.l.d.c.admin.BlogControllerTest         : Starting BlogControllerTest on DESKTOP-J147UBI with PID 15120 (started by Liu in E:\Java_Project\XFBlog)
+2022-09-19 17:21:30.336  INFO 15120 --- [main] c.l.d.c.admin.BlogControllerTest         : The following profiles are active: dev
+2022-09-19 17:21:34.879  INFO 15120 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-09-19 17:21:34.886  INFO 15120 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-09-19 17:21:35.058  INFO 15120 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35ms. Found 0 Redis repository interfaces.
+2022-09-19 17:21:35.451  WARN 15120 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'blogMapper' and 'com.ldf.demo.mapper.BlogMapper' mapperInterface. Bean already defined with the same name!
+2022-09-19 17:21:35.451  WARN 15120 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'typeMapper' and 'com.ldf.demo.mapper.TypeMapper' mapperInterface. Bean already defined with the same name!
+2022-09-19 17:21:36.695  INFO 15120 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.ldf.demo.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$19020c42] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-19 17:21:36.820  INFO 15120 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-19 17:21:36.836  INFO 15120 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatisPlusConfig' of type [com.ldf.demo.config.MybatisPlusConfig$$EnhancerBySpringCGLIB$$8cdcb8b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-19 17:21:36.883  INFO 15120 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-19 17:21:36.898  INFO 15120 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$39cb093f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-19 17:21:36.898  INFO 15120 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'druidConfig' of type [com.ldf.demo.config.DruidConfig$$EnhancerBySpringCGLIB$$e13b1e0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-19 17:21:37.191  INFO 15120 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'druidDataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-19 17:21:37.439  INFO 15120 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-19 17:21:37.454  INFO 15120 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-19 17:21:39.046  INFO 15120 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-09-19 17:21:39.077  INFO 15120 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-19 17:21:39.109  INFO 15120 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-19 17:21:40.112  INFO 15120 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-19 17:21:40.127  INFO 15120 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy99] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-19 17:21:40.143  INFO 15120 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userServiceImpl' of type [com.ldf.demo.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-19 17:21:40.143  INFO 15120 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.ldf.demo.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-19 17:21:45.067  INFO 15120 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-19 17:21:49.303  WARN 15120 --- [main] c.b.m.core.injector.AbstractMethod       : [com.ldf.demo.mapper.TypeMapper.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
+2022-09-19 17:21:50.837  INFO 15120 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-09-19 17:21:51.495  INFO 15120 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-09-19 17:21:51.635  INFO 15120 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-09-19 17:21:53.150  INFO 15120 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2022-09-19 17:21:53.260  INFO 15120 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2022-09-19 17:21:53.338  INFO 15120 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-09-19 17:21:53.965  INFO 15120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: postUsingPOST_1
+2022-09-19 17:21:53.965  INFO 15120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editInputUsingGET_1
+2022-09-19 17:21:53.980  INFO 15120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editPostUsingPOST_1
+2022-09-19 17:21:53.980  INFO 15120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: inputUsingGET_1
+2022-09-19 17:21:53.980  INFO 15120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: postUsingPOST_2
+2022-09-19 17:21:53.996  INFO 15120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: searchUsingPOST_1
+2022-09-19 17:21:53.996  INFO 15120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_1
+2022-09-19 17:21:54.027  INFO 15120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: postUsingPOST_3
+2022-09-19 17:21:54.043  INFO 15120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editInputUsingGET_2
+2022-09-19 17:21:54.043  INFO 15120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editPostUsingPOST_2
+2022-09-19 17:21:54.043  INFO 15120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: inputUsingGET_2
+2022-09-19 17:21:54.043  INFO 15120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: postUsingPOST_4
+2022-09-19 17:21:54.058  INFO 15120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: registerUsingPOST_1
+2022-09-19 17:21:54.058  INFO 15120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: toRegisterUsingGET_1
+2022-09-19 17:21:54.058  INFO 15120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editInputUsingGET_3
+2022-09-19 17:21:54.058  INFO 15120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editPostUsingPOST_3
+2022-09-19 17:21:54.074  INFO 15120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: inputUsingGET_3
+2022-09-19 17:21:54.074  INFO 15120 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: postUsingPOST_5
+2022-09-19 17:21:54.137  INFO 15120 --- [main] c.l.d.c.admin.BlogControllerTest         : Started BlogControllerTest in 25.948 seconds (JVM running for 30.402)
+2022-09-19 17:21:55.277  INFO 15120 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-09-19 17:21:55.277  INFO 15120 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-09-19 17:21:55.324  INFO 15120 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed

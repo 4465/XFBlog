@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * @author 刘威甫
- * @date 2022/9/19 17:19
+ * @date 2022/9/19 17:34
  * @description
  */
-public class PageLocalInterceptor implements HandlerInterceptor {
+public class PageLocalWebInterceptor implements HandlerInterceptor {
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
         PageHelper.clearPage();
