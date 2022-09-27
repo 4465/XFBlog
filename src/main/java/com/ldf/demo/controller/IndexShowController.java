@@ -2,13 +2,13 @@ package com.ldf.demo.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.ldf.demo.annotation.BlogViews;
 import com.ldf.demo.pojo.Comment;
 import com.ldf.demo.queryVo.*;
 import com.ldf.demo.service.BlogService;
 import com.ldf.demo.service.CommentService;
 //import com.sun.org.apache.xpath.internal.operations.Mod;
 import com.ldf.demo.utils.RedisUtils;
-import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -71,6 +71,7 @@ public class IndexShowController {
      * @param model
      * @return
      */
+    @BlogViews
     @GetMapping("/blog/{id}")
     public String blog(@PathVariable Long id, Model model){
 
@@ -81,7 +82,7 @@ public class IndexShowController {
         List<Comment> comments = commentService.listCommentByBlogId(id);
 
         //总访问量自增
-        redisUtils.hincr("blogMessage", "blogViewTotal", 1);
+        //redisUtils.hincr("blogMessage", "blogViewTotal", 1);
 
         model.addAttribute("blog",blog);
         model.addAttribute("comments",comments);

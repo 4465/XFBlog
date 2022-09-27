@@ -22,6 +22,7 @@ public class HotListTool {
 
     public static void main(String[] args) {
         HotListTool hotListTool = new HotListTool();
-        hotListTool.getWeiBoHotList();
+        String resp = hotListTool.getWeiBoHotList();
+        System.out.println(resp);
     }
 }

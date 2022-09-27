@@ -46,6 +46,11 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
+    public int getBlogViewById(Long id) {
+        return blogMapper.getBlogViewById(id);
+    }
+
+    @Override
     public int updateBlog(ShowBlog showBlog) {
         showBlog.setUpdateTime(new Date());
         return blogMapper.updateBlog(showBlog);
@@ -84,7 +89,7 @@ public class BlogServiceImpl implements BlogService {
         }
         String content = detailedBlog.getContent();
         detailedBlog.setContent(MarkdownUtils.markdownToHtmlExtensions(content));
-        blogMapper.updateViews(id);
+        // blogMapper.updateViews(id);
         blogMapper.getCommentCountById(id);
         return detailedBlog;
     }

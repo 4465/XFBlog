@@ -35,6 +35,10 @@
         b.appreciation,b.commentabled from xfblog.t_blog b  where  b.id = #{id};
     </select>
 
+    <select id="getBlogViewById" resultType="Integer">
+        select b.views from xfblog.t_blog b  where id = #{id};
+    </select>
+
     <select id="searchBlogs" parameterType="com.ldf.demo.queryVo.SearchBlog" resultMap="blog">
         <bind name="pattern" value="'%' + title + '%'"/>
         select b.id,b.title,b.update_time,b.recommend,b.type_id,t.id,t.name from xfblog.t_blog b ,xfblog.t_type t

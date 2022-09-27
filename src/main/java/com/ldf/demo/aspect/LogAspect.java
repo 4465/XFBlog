@@ -45,7 +45,7 @@ public class LogAspect {
         logger.info("Request : {}",log);
     }
     //定义后置通知
-   @After("log()")
+    @After("log()")
     public void doAfter(){
 
     }

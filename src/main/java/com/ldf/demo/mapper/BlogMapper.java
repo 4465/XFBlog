@@ -27,6 +27,8 @@ public interface BlogMapper {
 
     int deleteBlogById(Long id);
 
+    int getBlogViewById(Long id);
+
     List<SearchBlog> searchBlogs(SearchBlog searchBlog);
 
     List<FirstPageBlog> getFirstPageBlogs();
