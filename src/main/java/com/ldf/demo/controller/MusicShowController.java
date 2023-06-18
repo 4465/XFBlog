@@ -1,5 +1,6 @@
 package com.ldf.demo.controller;
 
+import io.swagger.annotations.Api;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @description:
  */
 @Controller
+@Api(tags = "音乐模块")
 public class MusicShowController {
 
     @GetMapping("/music")

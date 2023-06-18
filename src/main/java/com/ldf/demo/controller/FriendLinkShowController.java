@@ -1,6 +1,7 @@
 package com.ldf.demo.controller;
 
 import com.ldf.demo.service.FriendLinkService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @description:
  */
 @Controller
+@Api(tags = "友链展示接口")
 public class FriendLinkShowController {
 
     @Autowired

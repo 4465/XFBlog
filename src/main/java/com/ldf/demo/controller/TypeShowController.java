@@ -7,6 +7,7 @@ import com.ldf.demo.queryVo.BlogQuery;
 import com.ldf.demo.queryVo.FirstPageBlog;
 import com.ldf.demo.service.BlogService;
 import com.ldf.demo.service.TypeService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +25,7 @@ import java.util.List;
  * @description:
  */
 @Controller
+@Api(tags = "标签展示模块")
 public class TypeShowController {
 
     @Autowired

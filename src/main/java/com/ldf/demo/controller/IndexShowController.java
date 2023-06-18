@@ -9,6 +9,7 @@ import com.ldf.demo.service.BlogService;
 import com.ldf.demo.service.CommentService;
 //import com.sun.org.apache.xpath.internal.operations.Mod;
 import com.ldf.demo.utils.RedisUtils;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +26,7 @@ import java.util.Map;
  * @description:
  */
 @Controller
+@Api(tags = "主页接口模块")
 public class IndexShowController {
 
     @Autowired

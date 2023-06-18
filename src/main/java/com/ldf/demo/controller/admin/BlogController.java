@@ -38,7 +38,7 @@ import java.util.concurrent.ArrayBlockingQueue;
  */
 @Controller
 @RequestMapping("/admin")
-@Api(value = "博客相关接口")
+@Api(tags = "博客管理模块")
 public class BlogController {
 
     @Autowired

@@ -3,6 +3,7 @@ package com.ldf.demo.controller;
 import com.ldf.demo.pojo.Message;
 import com.ldf.demo.pojo.User;
 import com.ldf.demo.service.MessageService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -24,6 +25,7 @@ import java.util.List;
  * @description:
  */
 @Controller
+@Api(tags = "信息展示模块")
 public class MessageShowController {
 
     @Autowired

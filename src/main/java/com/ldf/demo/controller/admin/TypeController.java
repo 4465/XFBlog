@@ -5,6 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.ldf.demo.pojo.Type;
 import com.ldf.demo.queryVo.BlogQuery;
 import com.ldf.demo.service.TypeService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +26,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/admin")
+@Api(tags = "标签管理模块")
 public class TypeController {
 
     @Autowired

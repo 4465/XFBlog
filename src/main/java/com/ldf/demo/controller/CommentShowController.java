@@ -5,6 +5,7 @@ import com.ldf.demo.pojo.User;
 import com.ldf.demo.queryVo.DetailedBlog;
 import com.ldf.demo.service.BlogService;
 import com.ldf.demo.service.CommentService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -24,6 +25,7 @@ import java.util.List;
  * @description:
  */
 @Controller
+@Api(tags = "评论模块")
 public class CommentShowController {
 
 

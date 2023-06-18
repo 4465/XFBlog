@@ -25,7 +25,7 @@ import javax.servlet.http.HttpSession;
  */
 @Controller
 @RequestMapping(value = "/admin")
-@Api(tags = "登录相关接口")
+@Api(tags = "登录模块")
 public class LoginController {
     @Autowired
     private UserService userService;

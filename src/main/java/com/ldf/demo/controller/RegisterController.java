@@ -3,6 +3,7 @@ package com.ldf.demo.controller;
 import com.ldf.demo.pojo.User;
 import com.ldf.demo.service.impl.UserServiceImpl;
 import com.ldf.demo.utils.MD5Utils;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpSession;
 
 
 @Controller
+@Api(tags = "注册模块")
 public class RegisterController {
     @Autowired
     UserServiceImpl userService;

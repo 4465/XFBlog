@@ -4,11 +4,12 @@
     <meta name="baidu-site-verification" content="U67Xy1Qfos" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>清峰の小栈</title>
+    <title>先锋的小栈</title>
 
     <link href="../static/images/favicon.ico" th:href="@{/images/me.jpg}" rel="icon" type="image/x-ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
-    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css" th:href="@{/lib/editormd/css/editormd.min.css}">
+    <link rel="stylesheet" href="/lib/semanticUI-2.2.4/css/semantic.min.css" th:href="@{/lib/semanticUI-2.2.4/css/semantic.min.css}">
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">-->
+    <link rel="stylesheet" href="../static/lib/editormd/css/editormd.min.css" th:href="@{/lib/editormd/css/editormd.min.css}">
     <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
 
 </head>
@@ -39,7 +40,7 @@
                 <div class="ui dropdown item">
 
                     <div class="text" th:if="${session.user == null}">
-                        <img class="ui avatar image" src="/static/images/avatar.png">
+                        <img class="ui avatar image" src="/images/avatar.png">
                         <span>...</span>
                     </div>
 
@@ -292,7 +293,8 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<script src="/lib/semanticUI-2.2.4/js/semantic.min.js" th:src="@{/lib/semanticUI-2.2.4/js/semantic.min.js}"></script>
+<!--<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>-->
 <script src="../static/lib/waypoints/jquery.waypoints.min.js" th:src="@{/lib/waypoints/jquery.waypoints.min.js}"></script>
 
 <!--雪花效果-->

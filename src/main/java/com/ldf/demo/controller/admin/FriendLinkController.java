@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.ldf.demo.pojo.FriendLink;
 import com.ldf.demo.service.FriendLinkService;
+import io.swagger.annotations.Api;
 import org.attoparser.ParsingProcessingInstructionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.bind.DefaultValue;
@@ -24,6 +25,7 @@ import java.util.OptionalDouble;
  */
 @Controller
 @RequestMapping("/admin")
+@Api(tags = "友链管理模块")
 public class FriendLinkController {
 
     @Autowired

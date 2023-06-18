@@ -1,0 +1,4 @@
+2022-11-11 00:00:45.772  INFO 13884 --- [http-nio-8080-exec-5] com.ldf.demo.aspect.LogAspect            : Request : RequestLog{url='127.0.0.1', ip='http://127.0.0.1:8080/', classMethod='com.ldf.demo.controller.IndexShowController.index', args=[1, {}]}
+2022-11-11 00:00:45.925  INFO 13884 --- [http-nio-8080-exec-5] com.ldf.demo.aspect.LogAspect            : Result : index
+2022-11-11 00:01:06.993  INFO 13884 --- [http-nio-8080-exec-7] com.ldf.demo.aspect.LogAspect            : Request : RequestLog{url='127.0.0.1', ip='http://127.0.0.1:8080/footer/blogmessage', classMethod='com.ldf.demo.controller.IndexShowController.blogMessage', args=[{}]}
+2022-11-11 00:01:07.043  INFO 13884 --- [http-nio-8080-exec-7] com.ldf.demo.aspect.LogAspect            : Result : index :: blogMessage

@@ -34,7 +34,7 @@ import java.util.List;
 
 @Controller
 //@RequestMapping("/admin")
-@Api(tags = "用户相关接口")
+@Api(tags = "用户管理模块")
 public class UserController {
 
     @Autowired

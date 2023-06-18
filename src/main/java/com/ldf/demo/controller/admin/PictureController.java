@@ -5,6 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.ldf.demo.pojo.Picture;
 import com.ldf.demo.service.PictureService;
 //import com.sun.org.apache.xpath.internal.operations.Mod;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +24,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/admin")
+@Api(tags = "图片服务模块")
 public class PictureController {
 
     @Autowired
